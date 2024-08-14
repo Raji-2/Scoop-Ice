@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoop Ice Cream</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <script src="js/all.min.js"></script>
+</head>
+<body>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+            box-sizing: border-box;
+            font-family: poppins;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #222021;
+        }
+
+        .logo-title {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-title img {
+            height: 80px;
+            margin-right: 20px;
+        }
+        .register{
+            display: flex;
+            align-items: center;
+        }
+        .register i{
+            height: 24px;
+            margin-left: 5px;
+        }
+        #foc:focus{
+            background-color:rgb(97, 194, 97);
+            color: aliceblue;
+            font-weight: bolder;
+            border-radius: 20px;
+            border-bottom: 3px solid red;
+        }
+        #foc{
+            font-family: poppins;
+        }
+        #cd .card:hover{
+            border: 2px solid  orangered;
+            width: 350px;
+            height: 200px;
+        }
+        .card{
+            overflow: hidden;
+        }
+        .card h3{
+            overflow: hidden;
+        }
+        section{
+            width: 100%;
+            height: 100%;
+        }
+        #blinking-text{
+            animation: blink 1s infinite;
+        }
+        @keyframes blink{
+            0%{
+                opacity: 1;
+            }
+            50%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+
+.navbar-nav li:hover {  
+  background-color: #333;  
+  color: #fff;  
+}  
+  
+.card:hover {  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);  
+  transform: scale(1.1);  
+}  
+  
+.like-button {  
+  cursor: pointer;  
+}  
+  
+.like-button:hover {  
+  color: #fff;  
+  background-color: #333;  
+}  
+  
+.like-button:active {  
+  transform: scale(0.9);  
+}  
+
+@media (max-width: 372px) {    
+    #cd {  
+    display: flex;
+   flex-direction: column;  
+  }  
+ .card {  
+   width: 100%;  
+   margin-bottom: 20px;  
+  }  
+ .card img {  
+   width: 100%;  
+   height: 200px;  
+   object-fit: cover;  
+  }  
+  .navbar-nav  .nav-item{
+    text-align: center;
+  }
+  #cd1{
+    margin-left:38px;
+  }
+  #cd3{
+    margin-left: 38px;
+  }
+}  
+@media (min-width: 768px) and (max-width: 992px) {
+    .carousel-inner img {
+        height: 300px;
+        width: auto;
+    }
+    .section {
+        flex-direction: column;
+        padding: 10px;
+    }
+    #cd {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .card {
+        width: 45%;
+        margin-bottom: 20px;
+    }
+    .container-fluid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        padding: 10px;
+    }
+    #chge{
+        margin-left: 200px;
+        width: 350px;
+        padding: 50px;
+        height: 300px;
+    }
+    .navbar-nav{
+        text-align: center;
+    }
+}
+.cta-button {  
+  background-color: #333;  
+  color: #fff;  
+  padding: 10px 20px;  
+  border: none;  
+  border-radius: 5px;  
+  cursor: pointer;  
+}  
+  
+.cta-button:hover {  
+  background-color: #444;  
+}  
+  
+.cta-button:active {  
+  transform: scale(0.9);  
+}
+
+.container-fluid {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            background-color: rgb(235, 154, 107);
+            padding: 20px;
+            border: 2px solid white;
+            outline: 3px solid lightseagreen;
+        }
+        .section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(73, 71, 71, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .section:hover {
+            transform: translateY(-10px);
+        }
+        .title {
+            font-size: 2em;
+            color: rgb(236, 68, 26);
+            text-shadow: 5px 6px 4px rgb(82, 79, 79);
+            margin-bottom: 20px;
+        }
+        .info-title {
+            font-size: 1.5em;
+            color: #000;
+            text-shadow: 5px 6px 4px rgb(117, 115, 115);
+            margin: 20px 0;
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        .info-item i {
+            background-color: black;
+            color: aliceblue;
+            border-radius: 50%;
+            margin-right: 20px;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .info-item i:hover {
+            background-color: #555;
+        }
+        .info-item h5, .info-item h4 {
+            margin: 0;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+        .branches .info-item i,
+        .follow-us .info-item i {
+            background-color: transparent;
+            color: inherit;
+            border-radius: 0;
+            padding: 0;
+            justify-content: space-evenly;
+        }
+        
+</style>
+   <header class="header sticky-top">
+    <div class="logo-title">
+        <img src="Untitled_design-removebg-preview.png">
+        <h1 style="color: rgb(236, 105, 149);overflow: hidden;" id="blinking-text">SCOOP ICE CREAM</h1>
+    </div>
+    <div class="register text-light">
+        <i class="fa-solid fa-right-to-bracket"></i>
+        <a href="register.html" class="navbar-brand"><b>REGISTER</b></a>
+    </div>
+   </header>
+    <nav class="navbar bg-dark navbar-expand-lg navbar-light sticky-top" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+        <button class="navbar-toggler   bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="justify-content: end;">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item active">
+                <a class="nav-link navbar-brand text-danger active" href="#index" id="foc">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navbar-brand text-danger" href="about.html" id="foc">ABOUT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navbar-brand text-danger" href="chat.html" id="foc">EXPLORE PRODUCTS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navbar-brand text-danger" href="chat.html#scr" id="foc"><i class="fa-solid fa-cart-shopping" style="color: rgb(241, 234, 234);margin-left: 10px;"></i> ADD TO CART</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navbar-brand text-danger" href="contact.html"  id="foc"><i class="fa-solid fa-phone" style="color: rgb(241, 235, 235);margin-left: 10px;"></i>CONTACT</a>
+            </li>
+        </ul>
+        </div>
+    </nav>
+    <section id="home">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <div type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></div>
+          <div type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></div>
+          <div type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></div>
+          <div type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"></div>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="download (2).jfif" height="400px" alt="First slide">
+          </div>
+          <div class="carousel-item ">
+            <img class="d-block w-100" src="images.jfif" height="400px" alt="Second slide">
+          </div>
+          <div class="carousel-item ">
+            <img class="d-block w-100" src="download (10).jfif" height="400px" alt="Third slide">
+          </div>
+          <div class="carousel-item ">
+            <img class="d-block w-100" src="images (16).jfif" height="400px" alt="Third slide">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+     </div><br><br>
+    <h1 class="text-primary" style="font-family: poppins;text-shadow: 5px 6px 4px rgb(99, 173, 233);">Top Sales</h1>
+    <div style="display: flex;margin-top: 50px;"  id="cd">
+        <div class="card float-start" style="width: 300px;box-shadow: black 0 0 20px;"  id="cd1">
+            <img src="download (5).jfif" width="300px" height="200px">
+            <div class="card-img-overlay">
+            <h2 style="color: red;font-family: poppins;text-align: center;padding-top: 50px;">FLAT 50% OFFER</h2>
+            <h3>Chocolate Milkshake</h3>
+            </div>
+        </div>
+        <div class="card mx-auto" style="width: 300px;box-shadow: black 0 0 20px;"  id="cd2">
+            <img src="download (9).jfif" width="300px" height="200px">
+            <div class="card-img-overlay">
+            <h2 style="color: red;font-family: poppins;text-align: center;padding-top: 50px;">FLAT 40% OFFER</h2>
+            <h3>Slice Cassata</h3>
+            </div>
+        </div>
+        <div class="card float-end" style="width: 300px;overflow-y: hidden;box-shadow: black 0 0 20px;" id="cd3">
+            <img src="images (11).jfif" width="300px" height="200px">
+            <div class="card-img-overlay">
+            <h2 style="color: red;font-family: poppins;text-align: center;padding-top: 50px;">FLAT 45% OFFER</h2>
+            <h3>Tender Coconut Cup Icecream</h3>
+            </div>
+        </div>
+    </div>
+    </section><br>
+    <section id="contact">
+        <div class="container-fluid">
+            <div class="section">
+                <h1 class="title"><b>CONTACT</b></h1>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fa-solid fa-phone"  ></i>
+                        <h5><b>+91-9384009612</b></h5>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-phone"   ></i>
+                        <h5><b>+91-9380361044</b></h5>
+                    </div>
+                    <h4 class="info-title"><b>For Orders</b></h4>
+                    <div class="info-item">
+                        <i class="fa-solid fa-phone"  ></i>
+                        <h5><b>+91-7845205790</b></h5>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <h4 class="info-title"><b>Branches</b></h4>
+                <div class="branches">
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot" style="color: red;"></i>
+                        <h4><b>PORUR</b></h4>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot" style="color: red;"></i>
+                        <h4><b>ANNA NAGAR</b></h4>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot" style="color: red;"></i>
+                        <h4><b>T.NAGAR</b></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="section"    id="chge">
+                <h4 class="info-title"><b>Follow Us</b></h4>
+                <div class="follow-us">
+                    <div class="info-item">
+                        <i class="fa-brands fa-instagram"  style="color: purple;"></i>
+                        <h4><b>INSTAGRAM</b></h4>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-brands fa-youtube" style="color: red;"></i>
+                        <h4><b>YOUTUBE</b></h4>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-brands fa-facebook" style="color: blue;"></i>
+                        <h4><b>FACEBOOK</b></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="home.js"></script>
+    <script src="bootstrap.bundle.js"></script>
+</body>
+</html>

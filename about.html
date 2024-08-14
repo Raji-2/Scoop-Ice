@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoop Ice Cream</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <script src="js/all.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: poppins;
+        }
+
+        body {
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #222021;
+        }
+
+        .logo-title {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-title img {
+            height: 80px;
+            margin-right: 20px;
+        }
+
+        .register {
+            display: flex;
+            align-items: center;
+        }
+
+        .register i {
+            margin-left: 5px;
+        }
+
+        .register a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .register a:hover {
+            color: #f1a4da;
+        }
+
+        #blinking-text {
+            animation: blink 1s infinite;
+            color: #ec6995;
+        }
+        #foc{
+            font-family: poppins;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .navbar {
+            margin-bottom: 20px;
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            color: #d9534f;
+        }
+
+        .navbar-nav .nav-item .nav-link:hover,
+        .navbar-nav .nav-item .nav-link:focus {
+            background-color: #61c261;
+            color: #fff;
+            border-radius: 20px;
+            border-bottom: 3px solid red;
+        }
+
+        .container-fluid {
+            padding: 20px;
+        }
+
+        .founder-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .founder-section h1 {
+            color: #ec6995;
+        }
+
+        .founder-section img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .founder-section p {
+            text-indent: 100px;
+            padding-top: 20px;
+            font-size: larger;
+            padding: 10px;
+            color: #161615;
+            border-radius: 20px;
+            background: linear-gradient(to right, #eea3b0, #dd22dd);
+        }
+
+        .more-info-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .more-info-section h2 {
+            color: #eb0c56;
+        }
+
+        .image1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border: 2px dashed orangered;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: rgb(223, 124, 124) 0 0 20px;
+        }
+
+        .image1 img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .image1 p {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        @media (max-width: 576px) {
+            .image1 {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .img1, .img2 {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .img1 img {
+                width: 100%;
+                height: auto;
+            }
+
+            #che {
+                flex-direction: column;
+                height: auto;
+                align-items: center;
+                gap: 5px;
+            }
+            .navbar-nav  .nav-item{
+    text-align: center;
+  }
+        }
+        .cta-button {  
+  background-color: #333;  
+  color: #fff;  
+  padding: 10px 20px;  
+  border: none;  
+  border-radius: 5px;  
+  cursor: pointer;  
+}  
+#disp{
+    color: wheat;
+}
+
+.founder-section {
+            text-align: center;
+            padding: 20px;
+        }
+        .founder-section h1 {
+            font-size: 2.5em;
+            color: #000;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .founder-section img {
+            border: 2px solid blue;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px black;
+            transition: transform 0.3s ease;
+        }
+        .founder-section img:hover {
+            transform: scale(1.1);
+        }
+        .founder-section p {
+            font-size: 1.1em;
+            color: #333;
+            font-style: italic;
+            font-weight: bold;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        @media (min-width: 768px) and (max-width: 1024px){
+            .navbar-nav{
+                text-align: center;
+            }
+            .img1{
+                margin-top: 100px;
+            }
+        }
+        .cta-button:active {  
+  transform: scale(0.9);  
+}
+
+    </style>
+</head>
+<body>
+    <header class="header sticky-top">
+        <div class="logo-title">
+            <img src="Untitled_design-removebg-preview.png" alt="Scoop Ice Cream Logo">
+            <h1 id="blinking-text">SCOOP ICE CREAM</h1>
+        </div>
+    </header>
+    <nav class="navbar bg-dark navbar-expand-lg navbar-light sticky-top" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+        <button class="navbar-toggler  bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="justify-content: end;">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link navbar-brand text-danger" href="index.html" id="foc">HOME</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link navbar-brand text-danger" href="about.html" id="foc">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navbar-brand text-danger" href="chat.html" id="foc">EXPLORE PRODUCTS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navbar-brand text-danger" href="chat.html#scr" id="foc"><i class="fa-solid fa-cart-shopping" style="color: rgb(241, 233, 233);margin-left: 10px;"></i> ADD TO CART</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navbar-brand text-danger" href="contact.html" id="foc"><i class="fa-solid fa-phone" style="color: rgb(236, 226, 226);margin-left: 10px;"></i> CONTACT</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid"    style="background-color: #ac84ac;">
+        <div class="row founder-section">
+            <div class="col-12">
+                <h1 style="color: #eb0c56;"><i><b>FOUNDER</b></i></h1><br>
+                <img src="founder.png" id="img5" alt="Founder Image"    style="border: 2px  solid   blue;width: 200px;height: 200px;border-radius: 50%;margin-bottom: 3px;box-shadow: black 0 0 20px;"><br><br>
+                <p><i><b>Welcome to our ice cream haven, where every scoop is a journey into a world of delightful flavors and creamy perfection. At Scoop Ice Cream, we craft our ice cream with the finest ingredients, ensuring each bite is a burst of pure joy. Whether you're a fan of classic vanilla, adventures with exotic blends, or looking for dairy-free options, we have something to tantalize every taste bud. Indulge in our wide selection, from traditional favorites to innovative creations, all made with love and passion. Join us in celebrating the simple pleasure of ice cream and discover your new favorite flavor today!</b></i></p>
+            </div>
+        </div>
+        <div class="row more-info-section">
+            <div class="col-12">
+                <h2><b>MORE INFO</b></h2>
+            </div>
+        </div>
+        <div class="row" id="che">
+            <div class="image1 col-6">
+                <div class="row">
+                    <div class="img1 col-5">
+                        <img src="download (18).jfif" alt="Image 1" style="box-shadow: rgb(219, 98, 98) 0 0 20px;">
+                    </div>
+                    <div class="img2 col-6">
+                        <p><b>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam rerum optio earum. Impedit error ad in placeat fugiat, totam fuga consequuntur autem, amet ipsam ut iusto vero consequatur? Sit, error!</b></p>
+                    </div>
+                </div>
+            </div>
+            <div class="image1 col-6">
+                <div class="row">
+                    <div class="img1 col-5">
+                        <img src="download (19).jfif" alt="Image 2" style="box-shadow: rgb(228, 99, 99) 0 0 20px;">
+                    </div>
+                    <div class="img2 col-6">
+                        <p><b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aperiam facere, sequi autem, qui fugit sint provident, voluptas explicabo error cupiditate voluptate esse ratione sapiente optio beatae! Odit, tempore distinctio!</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-dark"    style="text-align: center;"><b>OUR TEAM</b></h2>
+                <video  src="https://youtu.be/EB0wk0geh8k?si=xkih7__Un-a9zksC"  controls    autoplay    muted   style="justify-content: center;width: 100%;height: 400px;"></video>
+            </div>
+        </div>
+    </div>
+    <script src="about.js"></script>
+    <script src="bootstrap.bundle.js"></script>
+</body>
+</html>

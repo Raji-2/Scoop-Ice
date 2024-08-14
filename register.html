@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <script src="js/all.min.js"></script>
+</head>
+<body>
+    <style>
+        *{
+           margin: 0;
+           padding: 0;
+           overflow:hidden;
+           box-sizing: border-box;
+           font-family: poppins;
+       }
+       .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #222021;
+        }
+
+        .logo-title {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-title img {
+            height: 80px;
+            margin-right: 20px;
+        }
+       .register{
+           display: flex;
+           align-items: center;
+       }
+       .register i{
+           height: 24px;
+           margin-left: 5px;
+       }
+       #foc:focus{
+            background-color:rgb(97, 194, 97);
+            color: aliceblue;
+            font-weight: bolder;
+            border-radius: 20px;
+            border-bottom: 3px solid red;
+        }
+        #foc{
+            font-family: poppins;
+        }
+        #blinking-text{
+            animation: blink 1s infinite;
+        }
+        @keyframes blink{
+            0%{
+                opacity: 1;
+            }
+            50%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        .cta-button {  
+  background-color: #333;  
+  color: #fff;  
+  padding: 10px 20px;  
+  border: none;  
+  border-radius: 5px;  
+  cursor: pointer;  
+}  
+  
+.cta-button:hover {  
+  background-color: #444;  
+}  
+#disp{
+    color: wheat;
+}
+.cta-button:active {  
+  transform: scale(0.9);  
+}
+        .navbar-brand:visited{
+            color:rgb(236, 16, 225);
+        }
+        @media(max-width:576px){
+            .reg{
+                display: none;
+            }
+            .bg h2{
+                font-size: small;
+            }
+            #regi{
+                font-size: medium;
+            }
+            #adj{
+                font-size: small;
+            }
+            .navbar-nav  .nav-item{
+    text-align: center;
+  }
+        }
+        @media (min-width: 768px) and (max-width: 1024px){
+            .navbar-nav{
+                text-align: center;
+            }
+        }
+   </style>
+   <header class="header sticky-top">
+       <div class="logo-title">
+           <img src="Untitled_design-removebg-preview.png">
+           <h1 style="color: rgb(236, 105, 149);" id="blinking-text">SCOOP ICE CREAM</h1>
+       </div>
+       <div class="register text-light">
+           <i class="fa-solid fa-right-to-bracket"></i>
+           <a href="register.html" class="navbar-brand active">REGISTER</a>
+       </div>
+      </header>
+      <nav class="navbar bg-dark navbar-expand-lg navbar-light sticky-top">
+       <button class="navbar-toggler  bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="justify-content: end;">
+           <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarNav">
+       <ul class="navbar-nav mx-auto">
+           <li class="nav-item active">
+               <a class="nav-link navbar-brand text-danger" href="index.html" id="foc">HOME</a>
+           </li>
+           <li class="nav-item">
+               <a class="nav-link navbar-brand text-danger" href="about.html" id="foc">ABOUT</a>
+           </li>
+           <li class="nav-item">
+               <a class="nav-link navbar-brand text-danger" href="chat.html" id="foc">EXPLORE PRODUCTS</a>
+           </li>
+           <li class="nav-item">
+               <a class="nav-link navbar-brand text-danger" href="chat.html#scr" id="foc"><i class="fa-solid fa-cart-shopping" style="color: rgb(236, 232, 232);margin-left: 10px;"></i> ADD TO CART</a>
+           </li>
+           <li class="nav-item">
+               <a class="nav-link navbar-brand text-danger" href="contact.html"  id="foc"><i class="fa-solid fa-phone" style="color: rgb(236, 226, 226);margin-left: 10px;"></i>CONTACT</a>
+           </li>
+       </ul>
+       </div>
+   </nav>
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-4" style="background-color: rgb(49, 49, 138);height: 470px;">
+            <div class="row">
+                <div class="col-12">
+                    <img src="register.png" width="140px" height="150px" style="margin-top: 50px;margin-left: 130px;"  class="reg">
+                </div>
+            </div>
+            <div class="row">
+                <div class="bg col-12">
+                    <h5 class="text-light m-4"  id="adj">To register, you will get more details about us...<br>Also, you will get an email for getting you know our product offer...<br><br></h5><h3 class="text-warning">HAPPY SCOOP....</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-8">
+            <form action="home.html" class="m-2">
+                <div style="display: flex;justify-content: space-between;">
+                    <h1 class="text-success" style="text-align: center;"  id="regi"><b>REGISTER</b></h1>
+                    <button class="btn btn-outline-danger btn-lg" data-bs-toggle="modal"  data-bs-target="#Modal">SUBMIT</button>
+                    <div  class="modal" id="Modal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <p>Successfully Registered....!</p>
+                                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <label for="name" class="form-label">NAME</label>
+                <input type="text" id="name" class="form-control" required>
+                <label for="dob" class="form-label">DATE OF BIRTH</label>
+                <input type="date" id="dob" class="form-control" required>
+                <label for="address" class="form-label">ADDRESS</label>
+                <input type="text" id="address" class="form-control" required>
+                <label for="mobile" class="form-label">MOBILE NUMBER</label>
+                <input type="text" id="mobile" class="form-control" required>
+                <label for="mail">MAIL ID</label>
+                <input type="mail" id="mail" class="form-control" required>
+            </form>
+        </div>
+       </div>
+  </div>
+    <script src="register.js"></script>
+    <script src="bootstrap.bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <script src="js/all.min.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+    <style>
+        *{
+           margin: 0;
+           padding: 0;
+           overflow: auto;
+           box-sizing: border-box;
+           font-family: poppins;
+       }
+       .header {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           background-color: #222021;
+       }
+
+       .logo-title {
+           display: flex;
+           align-items: center;
+       }
+
+       .logo-title img {
+           height: 80px;
+           margin-right: 20px;
+       }
+       .register{
+           display: flex;
+           align-items: center;
+       }
+       .register i{
+            height: 24px;
+            margin-left: 5px;
+        }
+        #foc:focus{
+            background-color:rgb(97, 194, 97);
+            color: aliceblue;
+            font-weight: bolder;
+            border-radius: 20px;
+            border-bottom: 3px solid red;
+        }
+        #foc{
+            font-family: poppins;
+        }
+        #blinking-text{
+            animation: blink 1s infinite;
+        }
+        @keyframes blink{
+            0%{
+                opacity: 1;
+            }
+            50%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        @media(max-width:320px){
+            .m-4{
+                margin-left: 0px  !important;
+            }
+        }
+        .cta-button {  
+  background-color: #333;  
+  color: #fff;  
+  padding: 10px 20px;  
+  border: none;  
+  border-radius: 5px;  
+  cursor: pointer;  
+}  
+  
+.cta-button:hover {  
+  background-color: #444;  
+}  
+  
+.cta-button:active {  
+  transform: scale(0.9);  
+}
+        #count{
+            width: 20px;
+            height: 20px;
+            background-color: blueviolet;
+            border-radius: 50%;
+            top: -40px;
+            color: white;
+        }
+        .col-12 .card:hover{
+            border: 2px solid red;
+            overflow: auto;
+        }
+        #scr{
+            display: none;
+        }
+        @media(max-width:372px){
+            *{
+                box-sizing: border-box;
+                overflow: auto;
+            }
+            .col-12{
+                display: flex;
+                flex-direction: column;
+                justify-content:center;
+            }
+            .card{
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+            }
+            .card img{
+                width: 300px;
+            }
+            .det,.det1{
+                margin-left: 0px;
+                overflow: hidden;
+            }
+            .det1{
+                font-weight: bolder;
+            }
+            .col-12 .card:hover{
+            border: 2px solid red;
+            overflow: hidden;
+            }
+            .navbar-nav  .nav-item{
+            text-align: center;
+            }
+            #atc{
+             margin-left: 80px !important;
+            }
+            .m-4{
+                margin-left: 15px  !important;
+            }
+            .navbar-nav input{
+                width: 250px    !important;
+                margin-left: 70px  !important;              
+            }
+            #scr{
+                margin-left: 80px  !important;
+            }
+        }
+        #disp{
+    color: wheat;
+}
+@media (max-width:768px){
+            .navbar-nav{
+                text-align: center;
+            }
+            #atc{
+                margin-left: 270px;
+            }
+            .navbar-nav input{
+                width: 350px;
+                margin-left: 200px;              
+            }
+        }
+#search-results{
+    color: #fff;
+}
+#search-results:hover{
+    cursor: pointer;
+}
+
+#search-results div {
+            cursor: pointer;
+            padding: 5px;
+            border: 1px solid #ddd;
+            margin: 5px 0;
+            background: #f9f9f9;
+            color: black;
+        }
+        #search-results div:hover {
+            background: #eee;
+        }
+        #item-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            text-align: center;
+            z-index: 1000;
+        }
+        #item-modal img {
+            max-width: 100%;
+            margin-bottom: 15px;
+        }
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        .close-modal {
+            cursor: pointer;
+            color: red;
+            font-size: 20px;
+        }
+
+    </style>
+    <header class="header sticky-top">
+        <div class="logo-title">
+            <img src="Untitled_design-removebg-preview.png">
+            <h1 style="color: rgb(236, 105, 149);" id="blinking-text">SCOOP ICE CREAM</h1>
+        </div>
+       </header>
+       <nav class="navbar bg-dark navbar-expand-lg navbar-light sticky-top">
+        <button class="navbar-toggler  bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="justify-content: end;">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+                <a class="nav-link navbar-brand text-danger" href="index.html" id="foc">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navbar-brand text-danger" href="about.html" id="foc">ABOUT</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link navbar-brand text-danger" href="chat.html" id="foc">EXPLORE PRODUCTS</a>
+            </li>
+            <li class="nav-item"style="display: flex;"  id="atc">
+                <i class="fa-solid fa-cart-shopping" style="color: rgb(241, 234, 234);margin-left: 10px;margin-top: 10px;"></i><p id="count" style="padding-left: 5px;overflow: hidden;">0</p> <a class="nav-link navbar-brand text-danger" href="#scr" id="foc">ADD TO CART</a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navbar-brand text-danger" href="contact.html"  id="foc"><i class="fa-solid fa-phone" style="color: rgb(245, 238, 238);margin-left: 10px;"></i>CONTACT</a>
+            </li>
+            <li class="nav-item">
+                <input type="search" placeholder="Search Items" id="srch" class="form-control">
+                <div id="search-results"></div>  
+                <div id="overlay"></div>
+<div id="item-modal">
+    <span class="close-modal">&times;</span>
+    <h2 id="item-name"></h2>
+    <p id="item-price"></p>
+    <img id="item-image" src="" alt="Item Image">
+</div>             
+            </li>
+        </ul>
+        </div>
+    </nav>
+      </div>
+        </div>
+        <div class="row"   id="rvw">
+            <div class="det1 col-12">
+                <h1 class="display-5  text-primary"  style="text-shadow: 4px 5px 3px rgb(147, 186, 243);"><i>EXPLORE OUR PRODUCTS....!</i></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="det col-12">
+                <h4 class="text-danger"   style="text-indent: 150px;padding: 10px;"><i>"Ice cream is a beloved dessert enjoyed worldwide for its rich flavors and creamy  texture.Its varieties are as they are delightful,ranging from classic favorites like vanilla and chocolate to exotic creations such as matcha green tea and mango."</i></h4>
+            </div>
+        </div>
+        <div class="container-fluid">
+        <div class="row">
+            <div class="col-2"  id="bt">
+                <button class="btn  btn-outline-success"  style="text-align: end;"><a href="#cone"  class="navbar-brand">CONE</i></a></button>
+            </div>
+            <div class="col-2"  id="bt">
+                <button class="btn  btn-outline-success"  style="text-align: end;"><a href="#cup"  class="navbar-brand">CUP</i></a></button>
+            </div>
+            <div class="col-2"  id="bt">
+                <button class="btn  btn-outline-success"  style="text-align: end;"><a href="#shake"  class="navbar-brand">Shake</i></a></button>
+            </div>
+            <div class="col-2"  id="bt">
+                <button class="btn  btn-outline-success"  style="text-align: end;"><a href="#slice"  class="navbar-brand">Slice</i></a></button>
+            </div>
+            <div class="col-2"  id="bt">
+               <button class="btn  btn-outline-success"  style="text-align: end;"><a href="#kulfi"  class="navbar-brand">Kulfi</i></a></button>
+            </div>
+        </div>
+        <div class="row"   id="#cone">
+            <div class="col-12" style="display: flex;justify-content: center;">
+                <div class="m-4 card" style="width: 300px;border-radius: 10px;overflow: hidden;">
+                    <img  src="download (6).jfif" width="300px"  height="200px">
+                    <h3 class="text-success">Chocolate Cone</h3>
+                    <h2>Rs.30</h2>
+                    <button data-item-image="download (6).jfif" data-item-price="30" data-item-name="Chocolate Cone" class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-cart-shopping"></i>Add To Cart</button>  
+                </div>
+                <div class="m-4 card" style="width: 300px;border-radius: 10px;overflow: hidden;">
+                    <img  src="download (7).jfif" width="300px"  height="200px">
+                    <h3 class="text-success">Strawberry Cone</h3>
+                    <h2>Rs.35</h2>
+                    <button data-item-image="download (7).jfif" data-item-price="35" data-item-name="Strawberry Cone" class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-cart-shopping"></i>Add To Cart</button>  
+                </div>
+                <div class="m-4 card" style="width: 300px;border-radius: 10px;overflow: hidden">
+                    <img  src="images (15).jfif" width="300px"  height="200px">
+                    <h3 class="text-success">Pista Cone</h3>
+                    <h2>Rs.50</h2>
+                    <button data-item-image="images (15).jfif" data-item-price="50" data-item-name="Pista Cone" class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-cart-shopping"></i>Add To Cart</button>  
+                </div>
+            </div>
+        </div>
+        <div class="row"  id="#cup">
+            <div class="col-12" style="display: flex;justify-content: center;">
+                <div class="m-4 card" style="width: 300px;  border-radius: 10px;overflow: hidden">
+                    <img  src="images (2).jfif" width="300px"  height="200px">
+                    <h3 class="text-success">BlueBerry Cup</h3>
+                    <h2>Rs.120</h2>
+                    <button data-item-image="images (2).jfif" data-item-price="120" data-item-name="BlueBerry  Cup" class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-cart-shopping"></i>Add To Cart</button>  
+                </div>
+                <div class="m-4 card" style="width: 300px; border-radius: 10px;overflow: hidden">
+                    <img  src="images (8).jfif" width="300px"  height="200px">
+                    <h3 class="text-success">Strawberry Cup</h3>
+                    <h2>Rs.110</h2>
+                    <button data-item-image="images (8).jfif" data-item-price="110" data-item-name="Strawberry Cup" class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-cart-shopping"></i>Add To Cart</button>  
+                </div>
+                <div class="m-4 card" style="width: 300px;  border-radius: 10px;overflow: hidden">
+                    <img  src="images (11).jfif" width="300px"  height="200px">
+                    <h3 class="text-success">Tender Coconut Cup</h3>
+                    <h2>Rs.150</h2>
+                    <button data-item-image="images (11).jfif" data-item-price="150" data-item-name="Tender Coconut Cup" class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-cart-shopping"></i>Add To Cart</button>  
+                </div>
+            </div>
+        </div>
+        <div class="row"  id="#shake">
+            <div class="col-12" style="display: flex;justify-content: center;">
+                <div class="m-4 card" style="width: 300px;border-radius: 10px;overflow: hidden">
+                    <img  src="images (10).jfif" width="300px"  height="200px">
+                    <h3 class="text-success">Chocolate Cup</h3>
+                    <h2>Rs.80</h2>
+                    <button data-item-image="images (10).jfif" data-item-price="80" data-item-name="Chocolate  Cup" class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-cart-shopping"></i>Add To Cart</button>  
+                </div>
+                <div class="m-4 card" style="width: 300px;border-radius: 10px;overflow: hidden">
+                    <img  src="images (9).jfif" width="300px"  height="200px">
+                    <h3 class="text-success">Vannila Cup</h3>
+                    <h2>Rs.70</h2>
+                    <button data-item-image="images (9).jfif" data-item-price="70" data-item-name="Vannila Cup" class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-cart-shopping"></i>Add To Cart</button>  
+                </div>
+                <div class="m-4 card" style="width: 300px;border-radius: 10px;overflow: hidden">
+                    <img  src="download (5).jfif" width="300px"  height="200px">
+                    <h3 class="text-success">Chocolate  Shake</h3>
+                    <h2>Rs.115</h2>
+                    <button data-item-image="download (5).jfif" data-item-price="115" data-item-name="Chocolate Shake" class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-cart-shopping"></i>Add To Cart</button>  
+                </div>
+            </div>
+        </div>
+        <div class="row"    id="#slice">
+            <div class="col-12" style="display: flex;justify-content: center;">
+                <div class="m-4 card" style="width: 300px;border-radius: 10px;overflow: hidden">
+                    <img  src="images (13).jfif" width="300px"  height="200px">
+                    <h3 class="text-success">Strawberry Shake</h3>
+                    <h2>Rs.125</h2>
+                    <button data-item-image="images (13).jfif" data-item-price="125" data-item-name="Strawberry Shake" class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-cart-shopping"></i>Add To Cart</button>  
+                </div>
+                <div class="m-4 card" style="width: 300px;border-radius: 10px;overflow: hidden">
+                    <img  src="images (14).jfif" width="300px"  height="200px">
+                    <h3 class="text-success">Mango  Shake</h3>
+                    <h2>Rs.150</h2>
+                    <button data-item-image="images (14).jfif" data-item-price="150" data-item-name="Mango  Shake" class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-cart-shopping"></i>Add To Cart</button>  
+                </div>
+                <div class="m-4 card" style="width: 300px;border-radius: 10px;overflow: hidden">
+                    <img  src="download (9).jfif" width="300px"  height="200px">
+                    <h3 class="text-success">Casatta Slice</h3>
+                    <h2>Rs.80</h2>
+                    <button data-item-image="download (9).jfif" data-item-price="80" data-item-name="Casatta Slice" class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-cart-shopping"></i>Add To Cart</button>  
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12" style="display: flex;justify-content: center;">
+                <div class="m-4 card" style="width: 300px;border-radius: 10px;overflow: hidden">
+                    <img  src="download (10).jfif" width="300px"  height="200px">
+                    <h3 class="text-success">Chocolate  vanilla  Slice</h3>
+                    <h2>Rs.80</h2>
+                    <button data-item-image="download (10).jfif" data-item-price="80" data-item-name="Chocolate  vanilla Slice" class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-cart-shopping"></i>Add To Cart</button>  
+                </div>
+                <div class="m-4 card" style="width: 300px;border-radius: 10px;overflow: hidden">
+                    <img  src="download (11).jfif" width="300px"  height="200px">
+                    <h3 class="text-success">Pista  Slice</h3>
+                    <h2>Rs.90</h2>
+                    <button data-item-image="download (11).jfif" data-item-price="90" data-item-name="Pista  Slice" class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-cart-shopping"></i>Add To Cart</button>  
+                </div>
+                <div class="m-4 card" style="width: 300px;border-radius: 10px;overflow: hidden;">
+                    <img  src="images (18).jfif" width="300px"  height="200px">
+                    <h3 class="text-success">Mango Slice</h3>
+                    <h2>Rs.90</h2>
+                    <button data-item-image="images (18).jfif" data-item-price="90" data-item-name="Mango  Slice" class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-cart-shopping"></i>Add To Cart</button>  
+                </div>
+            </div>
+        </div>
+        <div class="row"    id="#kulfi">
+            <div class="col-12" style="display: flex;justify-content: center;">
+                <div class="m-4 card" style="width: 300px;border-radius: 10px;overflow: hidden">
+                    <img  src="download (14).jfif" width="300px"  height="200px">
+                    <h3 class="text-success">Badam Kulfi</h3>
+                    <h2>Rs.60</h2>
+                    <button data-item-image="download (14).jfif" data-item-price="60" data-item-name="Badam  Kulfi" class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-cart-shopping"></i>Add To Cart</button>  
+                </div>
+                <div class="m-4 card" style="width: 300px;border-radius: 10px;overflow: hidden">
+                    <img  src="download (16).jfif" width="300px"  height="200px">
+                    <h3 class="text-success">Milk Kulfi</h3>
+                    <h2>Rs.50</h2>
+                    <button data-item-image="download (16).jfif" data-item-price="50" data-item-name="Milk Kulfi" class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-cart-shopping"></i>Add To Cart</button>  
+                </div>
+                <div class="m-4 card" style="width: 300px;border-radius: 10px;overflow: hidden">
+                    <img  src="images (19).jfif" width="300px"  height="200px">
+                    <h3 class="text-success">Pista  Kulfi</h3>
+                    <h2>Rs.82</h2>
+                    <button data-item-image="images (19).jfif" data-item-price="82" data-item-name="Pista  Kulfi" class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-cart-shopping"></i>Add To Cart</button>  
+                </div>
+            </div>
+        </div>
+        </div><hr>
+    </div><br><br><br><br><br><br>
+    <h2 style="text-align: center;"><i><b>Your Cart</b></i></h2>
+        <div data-bs-spy="scroll" data-bs-target="#navbar-example" data-bs-offset="0" class="scrollspy-example" tabindex="0"    style="height: auto;">
+            <div  id="scr" style="height: auto;width: 100%;display: flex;flex-wrap: wrap;">
+                
+            </div>
+            <h3><span id="totalAmount">$0</span></h3>
+            <button  type="button"  data-bs-toggle="modal" data-bs-target="#Modal" style="background-color: green; color: aliceblue; width: 50px; height: 30px;">BUY</button>
+            <div class="modal"  id="Modal">
+                <div   class="modal-dialog">
+                    <div   class="modal-content">
+                        <div   class="modal-body">
+                            <p>Successfully Ordered....! Thank  You...!!!</p>
+                            <button class="btn  btn-close"  data-bs-dismiss="modal"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn  btn-outline-success"  style="text-align: end;"><a href="#rvw"  class="navbar-brand">EXPLORE PRODUCTS</i></a></button>
+        </div>
+</div>
+    <script src="chats.js"></script>
+    <script src="bootstrap.bundle.js"></script>
+</body>
+</html>
